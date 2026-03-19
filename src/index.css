@@ -1,0 +1,265 @@
+/* ============================
+   Alison López Reyes — Portfolio
+   Minimalista · Azul marino
+   ============================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* --- Variables --- */
+:root {
+  --navy:        #1B2A4A;
+  --navy-light:  #2E4270;
+  --accent:      #3A6BD4;
+  --accent-soft: #EBF0FA;
+  --text:        #1A1A2E;
+  --muted:       #6B7280;
+  --border:      #DDE3F0;
+  --bg:          #FAFBFE;
+  --white:       #FFFFFF;
+  --radius:      6px;
+  --max-w:       720px;
+}
+
+/* --- Reset & base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+/* --- Layout --- */
+body > * {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* --- Separadores (hr) → invisibles, usados solo como espaciado --- */
+hr {
+  border: none;
+  margin: 2.5rem 0;
+}
+
+/* --- Encabezado principal (h1 + párrafo intro) --- */
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-top: 4rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
+}
+
+h1 + p {
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* --- Navegación --- */
+nav {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+}
+
+nav a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Reemplazamos los "|" con espacio — el texto del HTML los tiene,
+   así que los dejamos; simplemente los hacemos menos visibles */
+nav {
+  color: var(--border);
+}
+
+/* --- Títulos de sección (h2) --- */
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--border);
+}
+
+/* --- Subtítulos de proyectos (h3) --- */
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--navy-light);
+  margin-bottom: 0.4rem;
+}
+
+/* --- Párrafos --- */
+p {
+  color: #3D4460;
+  margin-bottom: 0.6rem;
+  font-weight: 300;
+}
+
+/* --- Tags de tecnologías (en proyectos, el strong) --- */
+p strong {
+  font-weight: 500;
+  color: var(--navy);
+}
+
+/* --- Itálica (proyecto académico) --- */
+p em {
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius);
+  margin-top: 0.25rem;
+}
+
+/* --- Lista de skills --- */
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+ul li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+ul li:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Lista de contacto (tiene ✉ ⌂ ◆) --- */
+#contacto + ul {
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+#contacto + ul li {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#contacto + ul li:hover {
+  background: none;
+  color: var(--text);
+}
+
+#contacto + ul li a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+#contacto + ul li a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* --- Proyectos (bloques separados) --- */
+h3 ~ p + p + p {
+  margin-bottom: 1.75rem;
+}
+
+/* Contenedor visual por proyecto (el <br> entre proyectos lo usamos
+   como separador — añadimos línea visual antes de cada h3 que no sea el primero) */
+#proyectos h3:not(:first-of-type) {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* --- Links globales --- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer --- */
+small {
+  display: block;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 2.5rem 0 3rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 560px) {
+  h1 {
+    margin-top: 2.5rem;
+  }
+
+  nav {
+    gap: 0.1rem;
+  }
+
+  nav a {
+    font-size: 0.78rem;
+  }
+
+  ul li {
+    font-size: 0.8rem;
+  }
+}
